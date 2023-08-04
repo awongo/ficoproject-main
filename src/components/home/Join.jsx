@@ -65,5 +65,3 @@ const Join = () => {
     </section>
   )
 }
-
-export default Join;
