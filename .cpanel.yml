@@ -1,0 +1,7 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/ficoproject-main/build
+    - npm install
+    - npm run build $DEPLOYPATH
+    - npm start 
