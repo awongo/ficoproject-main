@@ -1,7 +1,11 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/ficoproject-main/build
-    - npm install
-    - npm run build $DEPLOYPATH
-    - npm start 
+    - export DEPLOYPATH=/home/ficoconx/vendor.ficoafrica.com # Update with your cPanel username and deployment path
+
+    - npm install --production
+    - npm run build
+
+    - /bin/cp -R build/* $DEPLOYPATH
+
+    - /usr/local/cpanel/bin/safeuserdatactl ficoconx enable
